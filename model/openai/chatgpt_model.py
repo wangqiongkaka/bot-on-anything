@@ -14,8 +14,7 @@ class ChatGPTModel(Model):
     def __init__(self):
         api_key = model_conf(const.OPEN_AI).get('api_key')
         if api_key:
-            openai.api_key = model_conf(const.OPEN_AI).get('api_key')
-        log.info("[CHATGPT] api_key={}".format(openai.api_key))
+            openai.api_key = api_key
         api_base = model_conf(const.OPEN_AI).get('api_base')
         if api_base:
             openai.api_base = api_base
